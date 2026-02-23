@@ -754,7 +754,7 @@ não-tributados pelo ICMS
 04 VL_ISSQN Valor do ISSQN N - 02 OC
 05 VL_BC_IRRF Valor da base de cálculo do Imposto de N - 02 OC
 Renda Retido na Fonte
-06 VL_ IRRF Valor do Imposto de Renda - Retido na N - 02 OC
+06 VL_IRRF Valor do Imposto de Renda - Retido na N - 02 OC
 Fonte
 Página 76 de 361
 
@@ -763,7 +763,7 @@ Guia Prático EFD-ICMS/IPI – Versão 3.1.8
 Atualização: 31 de outubro de 2024
 07 VL_BC_PREV Valor da base de cálculo de retenção da N - 02 OC
 Previdência Social
-08 VL_ PREV Valor destacado para retenção da N - 02 OC
+08 VL_PREV Valor destacado para retenção da N - 02 OC
 Previdência Social
 Observações:
 Nível hierárquico - 3
@@ -1390,13 +1390,12 @@ NF relativa a última entrada inclusive
 despesas acessórias.
 09 VL_UNIT_BC_ST Valor unitário da base de cálculo do imposto N - 03 O
 pago por substituição.
-10 CHAVE_NFE_ULT_ Número completo da chave da NFe relativo N 044* - OC
-E à última entrada
+10 CHAVE_NFE_ULT_E Número completo da chave da NFe relativo à última entrada N 044* - OC
 11 NUM_ITEM_ULT_E Número sequencial do item na NF entrada N 003 - OC
 que corresponde à mercadoria objeto de
 pedido de ressarcimento
-12 VL_UNIT_BC_ICMS Valor unitário da base de cálculo da N - 02 O
-_ULT_E operação própria do remetente sob o regime
+12 VL_UNIT_BC_ICMS_ULT_E Valor unitário da base de cálculo da N - 02 O
+operação própria do remetente sob o regime
 comum de tributação
 13 ALIQ_ICMS_ULT_E Alíquota do ICMS aplicável à última entrada N - 02 O
 da mercadoria
@@ -1946,7 +1945,7 @@ unidade utilizada para informar o campo “QUANT_CONV”:
 Campo 13 (VL_UNIT_ICMS_OP_ESTOQUE_CONV_SAIDA)
 + Campo 14 (VL_UNIT_ICMS_ST_ESTOQUE_CONV_SAIDA)
 - Campo 16 (VL_UNIT_ICMS_NA_OPERACAO_CONV_SAIDA)
-= Campo 20 (VL_UNIT_ICMS_ST_CONV_ COMPL)
+= Campo 20 (VL_UNIT_ICMS_ST_CONV_COMPL)
 REGISTRO C185: INFORMAÇÕES COMPLEMENTARES DAS OPERAÇÕES DE SAÍDA DE
 MERCADORIAS SUJEITAS À SUBSTITUIÇÃO TRIBUTÁRIA (CÓDIGO 01, 1B, 04, 55 e 65).
 A obrigatoriedade e a forma de escrituração deste registro serão definidas pela UF de domicílio do contribuinte. O campo
@@ -2112,7 +2111,7 @@ Campo 13 (VL_UNIT_ICMS_ST_ESTOQUE_CONV): Preenchimento: Informar o valor médio 
 incluindo FCP ST, pago ou retido, das mercadorias em estoque. Quando a mercadoria estiver sujeita ao FCP adicionado ao
 ICMS ST, neste campo deve ser informado o valor médio unitário da parcela do ICMS ST + a parcela do FCP.
 O período para o cálculo do valor médio deve atender à legislação de cada UF. Exemplo: diário, mensal etc.
-Campo 14 (VL_UNIT_FCP_ICMS_ST_ESTOQUE_CONV) -: Preenchimento: Informar o valor médio unitário da parcela
+Campo 14 (VL_UNIT_FCP_ICMS_ST_ESTOQUE_CONV) - Preenchimento: Informar o valor médio unitário da parcela
 do FCP adicionado ao ICMS que tenha sido informado no campo “VL_UNIT_ICMS_ST_ESTOQUE_CONV”.
 Campo 15 (VL_UNIT_ICMS_ST_CONV_REST) – Validação: O valor a ser ressarcido / restituído é calculado conforme as
 orientações a seguir:
@@ -2123,7 +2122,7 @@ Campo 12 (VL_UNIT_ICMS_OP_ESTOQUE_CONV)
 + Campo 13 (VL_UNIT_ICMS_ST_ESTOQUE_CONV)
 - Campo 11 (VL_UNIT_ICMS_OP_CONV)
 = Campo 15 (VL_UNIT_ICMS_ST_CONV_REST)
-a.2) Quando o campo 11(VL_UNIT_ICMS_OP_CONV) não for obrigatório, de acordo com a legislação da UF,
+a.2) Quando o campo 11 (VL_UNIT_ICMS_OP_CONV) não for obrigatório, de acordo com a legislação da UF,
 corresponde ao valor no campo 13 (VL_UNIT_ICMS_ST_ESTOQUE_CONV)
 Nos casos de direito ao crédito do imposto, calculada com base no valor de saída da mercadoria inferior ao valor da
 BC ICMS ST, informar o valor unitário de ICMS correspondente ao seguinte cálculo, considerando a unidade utilizada
@@ -2155,7 +2154,7 @@ TRIBUTÁRIA (CÓDIGO 01, 1B, 04 e 55).
 A obrigatoriedade e a forma de escrituração deste registro serão definidas pela UF de domicílio do contribuinte. O campo
 “IND_OPER” do registro pai C100 deve ser igual a “1” - Saída. Este registro não poderá ser informado se houver um registro
 C185 preenchido.
-A chave desse registro é definida pelo campo 09 COD_MOD_ ENTRADA (para um mesmo C100):
+A chave desse registro é definida pelo campo 09 COD_MOD_ENTRADA (para um mesmo C100):
 • Para documentos eletrônicos (modelos 55, 59 e 65):
 CHV_DFE_ENTRADA + NUM_ITEM_ENTRADA
 • Para documentos em papel (modelos 01, 1B e 04):
@@ -2281,8 +2280,8 @@ CST_ICMS, CFOP e alíquota do ICMS.
 incluindo o FCP, quando aplicável, referente à
 combinação de CST_ICMS, CFOP e alíquota do
 ICMS.
-08 VL_BC_ICMS_ Parcela correspondente ao "Valor da base de N - 02 O O
-ST cálculo do ICMS" da substituição tributária
+08 VL_BC_ICMS_ST Parcela correspondente ao "Valor da base de N - 02 O O
+cálculo do ICMS" da substituição tributária
 Página 105 de 361
 
 --- Página 106 ---
@@ -2292,7 +2291,7 @@ referente à combinação de CST_ICMS, CFOP e
 alíquota do ICMS.
 09 VL_ICMS_ST Parcela correspondente ao valor N - 02 O O
 creditado/debitado do ICMS da substituição
-tributária, incluindo o FCP_ ST, quando
+tributária, incluindo o FCP_ST, quando
 aplicável, referente à combinação de CST_ICMS,
 CFOP, e alíquota do ICMS.
 10 VL_RED_BC Valor não tributado em função da redução da base N - 02 O O
@@ -2742,7 +2741,7 @@ Campo 09 (VL_UNIT_ICMS_ST_ESTOQUE_CONV) - Preenchimento: Informar o valor médio
 incluindo FCP ST, pago ou retido, das mercadorias em estoque. Quando a mercadoria estiver sujeita ao FCP adicionado ao
 ICMS ST, neste campo deve ser informado o valor médio unitário da parcela do ICMS ST + a parcela do FCP.
 O período para o cálculo do valor médio deve atender à legislação de cada UF. Exemplo: diário, mensal etc.
-Campo 10 (VL_UNIT_FCP_ CONV) - Preenchimento: Informar o valor médio unitário da parcela do FCP adicionado ao
+Campo 10 (VL_UNIT_FCP_CONV) - Preenchimento: Informar o valor médio unitário da parcela do FCP adicionado ao
 ICMS que tenha sido informado no campo “VL_UNIT_ICMS_ST_ESTOQUE_CONV”.
 Campo 11 (VL_UNIT_ICMS_ST_CONV_REST) – Validação: O valor a ser ressarcido / restituído é calculado conforme as
 orientações a seguir:
@@ -2961,7 +2960,7 @@ Campo 09 (VL_UNIT_ICMS_ST_ESTOQUE_CONV) - Preenchimento: Informar o valor médio
 incluindo FCP ST, pago ou retido, das mercadorias em estoque. Quando a mercadoria estiver sujeita ao FCP adicionado ao
 ICMS ST, neste campo deve ser informado o valor médio unitário da parcela do ICMS ST + a parcela do FCP.
 O período para o cálculo do valor médio deve atender à legislação de cada UF. Exemplo: diário, mensal etc.
-Campo 10 (VL_UNIT_FCP_ CONV) - Preenchimento: Informar o valor médio unitário da parcela do FCP adicionado ao
+Campo 10 (VL_UNIT_FCP_CONV) - Preenchimento: Informar o valor médio unitário da parcela do FCP adicionado ao
 ICMS que tenha sido informado no campo “VL_UNIT_ICMS_ST_ESTOQUE_CONV”.
 Campo 11 (VL_UNIT_ICMS_ST_CONV_REST) – Validação: O valor a ser ressarcido / restituído é calculado conforme as
 orientações a seguir:
@@ -3328,7 +3327,7 @@ Campo 09 (VL_UNIT_ICMS_ST_ESTOQUE_CONV) - Preenchimento: Informar o valor médio
 incluindo FCP ST, pago ou retido, das mercadorias em estoque. Quando a mercadoria estiver sujeita ao FCP adicionado ao
 ICMS ST, neste campo deve ser informado o valor médio unitário da parcela do ICMS ST + a parcela do FCP.
 O período para o cálculo do valor médio deve atender à legislação de cada UF. Exemplo: diário, mensal etc
-Campo 10 (VL_UNIT_FCP_ CONV) - Preenchimento: Informar o valor médio unitário da parcela do FCP adicionado ao
+Campo 10 (VL_UNIT_FCP_CONV) - Preenchimento: Informar o valor médio unitário da parcela do FCP adicionado ao
 ICMS que tenha sido informado no campo “VL_UNIT_ICMS_ST_ESTOQUE_CONV”.
 Campo 11 (VL_UNIT_ICMS_ST_CONV_REST) – Validação: O valor a ser ressarcido / restituído é calculado conforme as
 orientações a seguir:
@@ -3600,7 +3599,7 @@ Campo 09 (VL_UNIT_ICMS_ST_ESTOQUE_CONV) - Preenchimento: Informar o valor médio
 incluindo FCP ST, pago ou retido, das mercadorias em estoque. Quando a mercadoria estiver sujeita ao FCP adicionado ao
 ICMS ST, neste campo deve ser informado o valor médio unitário da parcela do ICMS ST + a parcela do FCP.
 O período para o cálculo do valor médio deve atender à legislação de cada UF. Exemplo: diário, mensal etc.
-Campo 10 (VL_UNIT_FCP_ CONV) - Preenchimento: Informar o valor médio unitário da parcela do FCP adicionado ao
+Campo 10 (VL_UNIT_FCP_CONV) - Preenchimento: Informar o valor médio unitário da parcela do FCP adicionado ao
 ICMS que tenha sido informado no campo “VL_UNIT_ICMS_ST_ESTOQUE_CONV”.
 Campo 11 (VL_UNIT_ICMS_ST_CONV_REST) – Validação: O valor a ser ressarcido / restituído é calculado conforme as
 orientações a seguir:
@@ -4962,7 +4961,7 @@ Campo 09 (VL_UNIT_ICMS_ST_ESTOQUE_CONV) - Preenchimento: Informar o valor médio
 incluindo FCP ST, pago ou retido, das mercadorias em estoque. Quando a mercadoria estiver sujeita ao FCP adicionado ao
 ICMS ST, neste campo deve ser informado o valor médio unitário da parcela do ICMS ST + a parcela do FCP.
 O período para o cálculo do valor médio deve atender à legislação de cada UF. Exemplo: diário, mensal etc.
-Campo 10 (VL_UNIT_FCP_ CONV) -: Preenchimento: Informar o valor médio unitário da parcela do FCP adicionado ao
+Campo 10 (VL_UNIT_FCP_CONV) - Preenchimento: Informar o valor médio unitário da parcela do FCP adicionado ao
 ICMS que tenha sido informado no campo “VL_UNIT_ICMS_ST_ESTOQUE_CONV”.
 Campo 11 (VL_UNIT_ICMS_ST_CONV_REST) – Validação: O valor a ser ressarcido / restituído é calculado conforme as
 orientações a seguir:
@@ -5340,7 +5339,7 @@ Página 166 de 361
 --- Página 167 ---
 Guia Prático EFD-ICMS/IPI – Versão 3.1.8
 Atualização: 31 de outubro de 2024
-Campo 10 (VL_UNIT_FCP_ CONV) -: Preenchimento: Informar o valor médio unitário da parcela do FCP adicionado ao
+Campo 10 (VL_UNIT_FCP_CONV) - Preenchimento: Informar o valor médio unitário da parcela do FCP adicionado ao
 ICMS que tenha sido informado no campo “VL_UNIT_ICMS_ST_ESTOQUE_CONV”.
 Campo 11 (VL_UNIT_ICMS_ST_CONV_REST) – Validação: O valor a ser ressarcido / restituído é calculado conforme as
 orientações a seguir:
